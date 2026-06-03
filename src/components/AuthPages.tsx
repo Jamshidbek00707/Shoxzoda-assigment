@@ -62,10 +62,10 @@ export default function AuthPages() {
           FH
         </div>
         <h2 className="text-xl font-sans font-bold tracking-tight text-[#0F172A]">
-          FashionHub Cloud ERP-CRM-WMS
+          FashionHub ERP-CRM-WMS Tizimi
         </h2>
         <p className="mt-1 text-xs text-[#64748B]">
-          Wholesale apparel enterprise global management system.
+          Ulgurji kiyim-kechak korxonalari va omborxonalarini boshqarish tizimi.
         </p>
       </div>
 
@@ -86,7 +86,7 @@ export default function AuthPages() {
                   : "border-transparent text-[#64748B] hover:text-[#0F172A]"
               }`}
             >
-              Sign In to ERP
+              Tizimga kirish
             </button>
             <button
               onClick={() => {
@@ -100,7 +100,7 @@ export default function AuthPages() {
                   : "border-transparent text-[#64748B] hover:text-[#0F172A]"
               }`}
             >
-              Register Node
+              Ro'yxatdan o'tish
             </button>
           </div>
 
@@ -123,25 +123,25 @@ export default function AuthPages() {
           {activeForm === "login" && (
             <form onSubmit={handleLoginSubmit} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Username Identifier</label>
+                <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Foydalanuvchi nomi</label>
                 <input
                   type="text"
                   required
                   value={username}
                   onChange={e => setUsername(e.target.value)}
-                  placeholder="e.g. admin"
+                  placeholder="Masalan: admin"
                   className="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs outline-none focus:ring-1 focus:ring-[#2563EB]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Password Key</label>
+                <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Maxfiy parol</label>
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={e => setPassword(e.target.value)}
-                  placeholder="Enter secure password"
+                  placeholder="Parolni kiriting"
                   className="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs outline-none focus:ring-1 focus:ring-[#2563EB]"
                 />
               </div>
@@ -150,7 +150,7 @@ export default function AuthPages() {
                 type="submit"
                 className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-2 rounded-lg text-xs font-semibold shadow-sm flex items-center justify-center gap-1 transition-all cursor-pointer"
               >
-                Authenticate Session <ChevronRight size={14} />
+                Tizimga kirish <ChevronRight size={14} />
               </button>
             </form>
           )}
@@ -159,51 +159,51 @@ export default function AuthPages() {
           {activeForm === "register" && (
             <form onSubmit={handleRegisterSubmit} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Desired Username</label>
+                <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Foydalanuvchi nomi</label>
                 <input
                   type="text"
                   required
                   value={username}
                   onChange={e => setUsername(e.target.value)}
-                  placeholder="Choose unique username handle"
+                  placeholder="Yorliq uchun unikal nom tanlang"
                   className="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs outline-none focus:ring-1 focus:ring-[#2563EB]"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1 col-span-2">
-                  <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Authorization Role level</label>
+                  <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Ruxsat darajasi (Roli)</label>
                   <select
                     value={role}
                     onChange={e => setRole(e.target.value as any)}
                     className="w-full bg-white border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs outline-none focus:ring-1 focus:ring-[#2563EB]"
                   >
-                    <option value="Admin">Admin (Full write capabilities)</option>
-                    <option value="Manager">Manager (No employee delete)</option>
-                    <option value="Employee">Employee (Read-Only references)</option>
+                    <option value="Admin">Admin (To'liq yuklatilgan huquqlar)</option>
+                    <option value="Manager">Menejer (Xodimlarni o'chirishdan tashqari)</option>
+                    <option value="Employee">Xodim (Faqat o'qish huquqi)</option>
                   </select>
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Password</label>
+                  <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Parol</label>
                   <input
                     type="password"
                     required
                     value={password}
                     onChange={e => setPassword(e.target.value)}
-                    placeholder="Enter password"
+                    placeholder="Parol"
                     className="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs outline-none focus:ring-1 focus:ring-[#2563EB]"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Confirm Password</label>
+                  <label className="text-[10px] uppercase font-mono font-bold text-[#64748B]">Tasdiqlash</label>
                   <input
                     type="password"
                     required
                     value={confirmPassword}
                     onChange={e => setConfirmPassword(e.target.value)}
-                    placeholder="Re-type password"
+                    placeholder="Takrorlang"
                     className="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs outline-none focus:ring-1 focus:ring-[#2563EB]"
                   />
                 </div>
@@ -213,7 +213,7 @@ export default function AuthPages() {
                 type="submit"
                 className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-2 rounded-lg text-xs font-semibold shadow-sm flex items-center justify-center gap-1 transition-all cursor-pointer"
               >
-                Enroll Resource <UserPlus size={14} />
+                Ro'yxatdan o'tkazish <UserPlus size={14} />
               </button>
             </form>
           )}
@@ -221,10 +221,10 @@ export default function AuthPages() {
           {/* REVIEWERS TEST CREDENTIALS BOX */}
           <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-4 text-xs space-y-2.5">
             <h4 className="font-bold text-[#0F172A] flex items-center gap-1.5">
-              <Info size={14} className="text-[#2563EB]" /> Pre-allocated Test Credentials
+              <Info size={14} className="text-[#2563EB]" /> Tezkor test ruxsatnomalari (Kirish uchun bosing)
             </h4>
             <p className="text-[#64748B] text-[11px] leading-relaxed">
-              We have pre-seeded the local database. Click on any credential type below to auto-fill the login form:
+              Tizimni sinab ko'rish uchun quyidagi rollardan birini bosing; shakl avtomatik to'ldiriladi:
             </p>
             <div className="grid grid-cols-3 gap-2 text-[10px] uppercase font-mono font-bold">
               <button
@@ -240,7 +240,7 @@ export default function AuthPages() {
                 onClick={() => handleQuickInboundFill("manager", "manager123")}
                 className="bg-yellow-100 hover:bg-yellow-200 text-yellow-800 p-2 rounded border border-yellow-200 shadow-xs text-center transition-all cursor-pointer"
               >
-                MANAGER<br />
+                MENEJER<br />
                 <span className="text-[9px] font-normal text-slate-500 font-sans lowercase">manager / manager123</span>
               </button>
               <button
@@ -248,7 +248,7 @@ export default function AuthPages() {
                 onClick={() => handleQuickInboundFill("employee", "employee123")}
                 className="bg-green-100 hover:bg-green-200 text-green-800 p-2 rounded border border-green-200 shadow-xs text-center transition-all cursor-pointer"
               >
-                EMPLOYEE<br />
+                XODIM<br />
                 <span className="text-[9px] font-normal text-slate-500 font-sans lowercase">employee / employee123</span>
               </button>
             </div>

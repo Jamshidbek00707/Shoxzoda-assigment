@@ -121,14 +121,14 @@ export default function App() {
             </div>
             <div>
               <h1 className="font-bold text-sm tracking-tight text-white block">FashionHub</h1>
-              <span className="text-[10px] text-slate-400 block font-semibold">Enterprise Resource Suite</span>
+              <span className="text-[10px] text-slate-400 block font-semibold">Tizim boshqaruvi (ERP)</span>
             </div>
           </div>
 
           {/* Sourcing Menu list */}
           <nav className="space-y-1 text-slate-400">
             <span className="text-[9px] uppercase tracking-widest font-mono font-bold text-slate-500 block px-3.5 mb-2">
-              Commercial Operations
+              Tijorat operatsiyalari
             </span>
             <button
               onClick={() => {
@@ -141,7 +141,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <LayoutDashboard size={14} /> Overview Dashboard
+              <LayoutDashboard size={14} /> Tizim sharhi (Daxshbord)
             </button>
             <button
               onClick={() => {
@@ -154,7 +154,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <Users size={14} /> Wholesale Customers (CRM)
+              <Users size={14} /> Ulgurji mijozlar (CRM)
             </button>
             <button
               onClick={() => {
@@ -167,7 +167,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <Box size={14} /> Storage &amp; Stock (WMS)
+              <Box size={14} /> Ombor va qoldiqlar (WMS)
             </button>
             <button
               onClick={() => {
@@ -180,7 +180,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <Truck size={14} /> Supplier Sourcing
+              <Truck size={14} /> Ta'minotchilar va xaridlar
             </button>
             <button
               onClick={() => {
@@ -193,11 +193,11 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <ShoppingCart size={14} /> Sales &amp; Bulk Orders
+              <ShoppingCart size={14} /> Sotuv va ulgurji buyurtmalar
             </button>
 
             <span className="text-[9px] uppercase tracking-widest font-mono font-bold text-slate-500 block px-3.5 pt-4 mb-2">
-              Enterprise Ledger
+              Korxona tahlili &amp; Moliyalar
             </span>
             <button
               onClick={() => {
@@ -210,7 +210,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <Contact size={14} /> Corporate Directory
+              <Contact size={14} /> Xodimlar va HR bo'limi
             </button>
             <button
               onClick={() => {
@@ -223,7 +223,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <Coins size={14} /> Double-Entry Ledger
+              <Coins size={14} /> Moliyaviy balans (Ledger)
             </button>
             <button
               onClick={() => {
@@ -236,7 +236,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <TrendingUp size={14} /> Performance Analytics
+              <TrendingUp size={14} /> Biznes tahlili (Analitika)
             </button>
             <button
               onClick={() => {
@@ -249,7 +249,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <FileSpreadsheet size={14} /> Reports &amp; Audits
+              <FileSpreadsheet size={14} /> Hisobotlar va auditlar
             </button>
             <button
               onClick={() => {
@@ -262,7 +262,7 @@ export default function App() {
                   : "hover:bg-[#151D30] hover:text-white"
               }`}
             >
-              <Settings size={14} /> General Settings
+              <Settings size={14} /> Tizim sozlamalari
             </button>
           </nav>
         </div>
@@ -275,14 +275,16 @@ export default function App() {
             </div>
             <div className="truncate">
               <p className="font-bold text-[#f8fafc] text-[11px] leading-tight truncate">{user?.username}</p>
-              <span className="text-[9px] uppercase font-bold text-[#60A5FA] mt-0.5 block">{user?.role} Access</span>
+              <span className="text-[9px] uppercase font-bold text-[#60A5FA] mt-0.5 block">
+                {user?.role === "Admin" ? "Administrator" : user?.role === "Manager" ? "Menejer" : "Xodim"} huquqi
+              </span>
             </div>
           </div>
           <button
             onClick={logout}
             className="w-full flex items-center gap-2.5 px-3.5 py-2 rounded-xl text-xs text-red-400 font-bold hover:bg-red-500/10 cursor-pointer select-none transition-all"
           >
-            <LogOut size={13} /> Exit Console
+            <LogOut size={13} /> Tizimdan chiqish
           </button>
         </div>
       </aside>
@@ -308,13 +310,13 @@ export default function App() {
             </button>
             <div className="space-y-0.5">
               <h2 className="font-sans font-bold text-sm tracking-tight text-slate-800">
-                {activeTab === 'dashboard' ? 'Overview' : activeTab === 'crm' ? 'Wholesale CRM' : activeTab === 'wms' ? 'Warehouse & Inventory' : activeTab === 'suppliers' ? 'Supplier Registry' : activeTab === 'orders' ? 'Bulk Sales Orders' : activeTab === 'employees' ? 'Company Directory' : activeTab === 'finance' ? 'Financial Bookkeeping' : activeTab === 'analytics' ? 'Business Metrics' : activeTab === 'reports' ? 'Spreadsheets & Reports' : 'System Settings'}
+                {activeTab === 'dashboard' ? 'Tizim sharhi' : activeTab === 'crm' ? 'Ulgurji mijozlar (CRM)' : activeTab === 'wms' ? 'Ombor va qoldiqlar (WMS)' : activeTab === 'suppliers' ? 'Ta\'minotchilar reyestri' : activeTab === 'orders' ? 'Sotuv va ulgurji buyurtmalar' : activeTab === 'employees' ? 'Xodimlar va HR bo\'limi' : activeTab === 'finance' ? 'Moliyaviy balans (Ledger)' : activeTab === 'analytics' ? 'Biznes tahlili (Analitika)' : activeTab === 'reports' ? 'Hisobotlar va auditlar' : 'Tizim sozlamalari'}
               </h2>
               <div className="flex items-center gap-1.5 text-[10px] font-medium">
-                <span className="text-slate-400">Data Node Status:</span>
+                <span className="text-slate-400">Ma'lumotlar holati:</span>
                 <span className="font-mono text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  Synced
+                  Sinxronlandi
                 </span>
               </div>
             </div>
@@ -323,7 +325,7 @@ export default function App() {
           <div className="flex items-center gap-2 select-none">
             {loadingState && (
               <span className="text-[10px] uppercase font-mono text-[#2563EB] font-bold animate-pulse mr-2">
-                Syncing database...
+                Ma'lumotlar yangilanmoqda...
               </span>
             )}
             <button
@@ -331,7 +333,7 @@ export default function App() {
               className="bg-[#F1F5F9] hover:bg-[#E2E8F0] text-slate-600 text-xs px-3.5 py-2 rounded-xl font-semibold transition-all flex items-center gap-1.5 cursor-pointer border border-[#E2E8F0]"
             >
               <RefreshCw size={12} className={loadingState ? "animate-spin" : ""} />
-              Refresh Data
+              Yangilash
             </button>
           </div>
         </header>

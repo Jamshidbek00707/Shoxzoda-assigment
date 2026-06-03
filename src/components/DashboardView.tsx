@@ -79,10 +79,10 @@ export default function DashboardView({
       <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="font-sans font-bold text-lg text-[#0F172A] tracking-tight">
-            Welcome Back, {user?.full_name || "Executive"}
+            Xush kelibsiz, {user?.full_name || "Boshqaruvchi"}!
           </h2>
           <p className="text-xs text-[#64748B] mt-0.5">
-            Operational overview of live wholesale pipelines, fulfillment workflows, and double-entry bookkeeping ledgers.
+            Ulgurji savdo kanallari, ombor qoldiqlari va ikki tomonlama buxgalteriya balanslarining umumiy tahliliy sharhi.
           </p>
         </div>
         <div className="flex items-center gap-2 font-medium text-xs bg-[#F8FAFC] border border-[#E2E8F0] px-4 py-2 rounded-xl text-[#64748B]">
@@ -102,9 +102,9 @@ export default function DashboardView({
         {/* Total Customers */}
         <div className="bg-white rounded-xl border border-[#E2E8F0] p-4 shadow-sm flex items-center justify-between hover:border-[#2563EB]/40 transition-all">
           <div className="space-y-1">
-            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Total Wholesalers</span>
+            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Mijozlar soni</span>
             <p className="font-sans font-bold text-xl text-[#0F172A]">{totalCustomers}</p>
-            <span className="text-[10px] font-mono text-[#10B981] font-semibold">+12.4% vs prev Mo</span>
+            <span className="text-[10px] font-mono text-[#10B981] font-semibold">o'tgan oyga nisbatan +12.4%</span>
           </div>
           <div className="w-10 h-10 rounded-lg bg-[#2563EB]/5 flex items-center justify-center text-[#2563EB]">
             <Users size={18} />
@@ -114,9 +114,9 @@ export default function DashboardView({
         {/* Total Products */}
         <div className="bg-white rounded-xl border border-[#E2E8F0] p-4 shadow-sm flex items-center justify-between hover:border-[#0EA5E9]/40 transition-all">
           <div className="space-y-1">
-            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Catalog Styles</span>
+            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Faol dizaynlar</span>
             <p className="font-sans font-bold text-xl text-[#0F172A]">{totalProducts}</p>
-            <span className="text-[10px] font-mono text-[#10B981] font-semibold">+4.1% this quarter</span>
+            <span className="text-[10px] font-mono text-[#10B981] font-semibold">chorakda +4.1%</span>
           </div>
           <div className="w-10 h-10 rounded-lg bg-[#0EA5E9]/5 flex items-center justify-center text-[#0EA5E9]">
             <Package size={18} />
@@ -126,9 +126,9 @@ export default function DashboardView({
         {/* Total Orders */}
         <div className="bg-white rounded-xl border border-[#E2E8F0] p-4 shadow-sm flex items-center justify-between hover:border-[#10B981]/40 transition-all">
           <div className="space-y-1">
-            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Total Sales Orders</span>
+            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Ulgurji buyurtmalar</span>
             <p className="font-sans font-bold text-xl text-[#0F172A]">{totalOrders}</p>
-            <span className="text-[10px] font-mono text-[#10B981] font-semibold">+8.9% seasonal trend</span>
+            <span className="text-[10px] font-mono text-[#10B981] font-semibold">mavsumiy o'sish +8.9%</span>
           </div>
           <div className="w-10 h-10 rounded-lg bg-[#10B981]/5 flex items-center justify-center text-[#10B981]">
             <ShoppingBag size={18} />
@@ -138,9 +138,9 @@ export default function DashboardView({
         {/* Total Revenue */}
         <div className="bg-white rounded-xl border border-[#E2E8F0] p-4 shadow-sm flex items-center justify-between hover:border-[#F59E0B]/40 transition-all">
           <div className="space-y-1">
-            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Gross Revenue</span>
+            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Umumiy tushum</span>
             <p className="font-sans font-bold text-xl text-[#0F172A]">${totalRevenue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-            <span className="text-[10px] font-mono text-[#10B981] font-semibold">+15.2% year-over-year</span>
+            <span className="text-[10px] font-mono text-[#10B981] font-semibold">yillik o'sish +15.2%</span>
           </div>
           <div className="w-10 h-10 rounded-lg bg-[#F59E0B]/5 flex items-center justify-center text-[#F59E0B]">
             <DollarSign size={18} />
@@ -150,9 +150,9 @@ export default function DashboardView({
         {/* Operating Profit */}
         <div className="bg-white rounded-xl border border-[#E2E8F0] p-4 shadow-sm flex items-center justify-between hover:border-[#10B981]/40 transition-all">
           <div className="space-y-1">
-            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Net Ledger Income</span>
+            <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-[#94A3B8]">Balansdagi sof foyda</span>
             <p className="font-sans font-bold text-xl text-[#0F172A]">${totalProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-            <span className="text-[10px] font-mono text-[#10B981] font-semibold">+18.7% net margin</span>
+            <span className="text-[10px] font-mono text-[#10B981] font-semibold">rentabellik +18.7%</span>
           </div>
           <div className="w-10 h-10 rounded-lg bg-[#10B981]/5 flex items-center justify-center text-[#10B981]">
             <TrendingUp size={18} />
@@ -172,14 +172,14 @@ export default function DashboardView({
         <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-sm xl:col-span-2">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h3 className="font-sans font-bold text-sm text-[#0F172A]">Recent Sales Invoices</h3>
-              <p className="text-[11px] text-[#64748B]">Newly booked wholesale client transactions</p>
+              <h3 className="font-sans font-bold text-sm text-[#0F172A]">Yaqinda rasmiylashtirilgan sotuv buyurtmalari</h3>
+              <p className="text-[11px] text-[#64748B]">Yangi buyurtma qilingan ulgurji schyot-fakturalar</p>
             </div>
             <button
               onClick={() => onNavigate("orders")}
               className="text-xs font-semibold text-[#2563EB] hover:underline flex items-center gap-1"
             >
-              Order Central <ArrowRight size={12} />
+              Buyurtmalar markazi <ArrowRight size={12} />
             </button>
           </div>
 
@@ -187,17 +187,17 @@ export default function DashboardView({
             <table className="w-full text-left font-sans text-xs">
               <thead>
                 <tr className="border-b border-[#E2E8F0] text-[#64748B] font-semibold h-8 bg-[#F8FAFC]">
-                  <th className="px-3">PO #</th>
-                  <th className="px-3">Wholesaler</th>
-                  <th className="px-3">Order Date</th>
-                  <th className="px-3 text-right">Invoice Sum</th>
-                  <th className="px-3 text-center">Lifecycle Status</th>
+                  <th className="px-3">Raqami</th>
+                  <th className="px-3">Ulgurji xaridor</th>
+                  <th className="px-3">Sana</th>
+                  <th className="px-3 text-right">Summa</th>
+                  <th className="px-3 text-center">Statusi</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#E2E8F0]">
                 {orders.slice(0, 5).map(o => (
                   <tr key={o.id} className="h-10 hover:bg-[#F8FAFC] transition-colors">
-                    <td className="px-3 font-mono font-bold text-[#2563EB]">{o.id}</td>
+                    <td className="px-3 font-mono font-bold text-[#2563EB]">#{o.id}</td>
                     <td className="px-3 font-medium text-[#0F172A]">{o.customer_name}</td>
                     <td className="px-3 text-[#64748B]">{o.order_date}</td>
                     <td className="px-3 text-right font-mono font-semibold">${o.total_amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
@@ -213,7 +213,13 @@ export default function DashboardView({
                             : "bg-[#F59E0B]/10 text-[#F59E0B]"
                         }`}
                       >
-                        {o.status}
+                        {o.status === "Completed"
+                          ? "Bajarildi"
+                          : o.status === "Processing"
+                          ? "Jarayonda"
+                          : o.status === "Cancelled"
+                          ? "Bekor qilindi"
+                          : "Kutilmoqda"}
                       </span>
                     </td>
                   </tr>
@@ -228,14 +234,14 @@ export default function DashboardView({
           <div>
             <div className="flex items-center gap-2 mb-1">
               <AlertTriangle className="text-[#F59E0B]" size={18} />
-              <h3 className="font-sans font-bold text-sm text-[#0F172A]">Low Stock Audits (&le; 15)</h3>
+              <h3 className="font-sans font-bold text-sm text-[#0F172A]">Zaxirasi kam qolganlar (≤ 15 d)</h3>
             </div>
-            <p className="text-[11px] text-[#64748B] mb-4">Stock thresholds triggering supplier reorder alerts</p>
+            <p className="text-[11px] text-[#64748B] mb-4">Ushbu mahsulotlarni zaxirasini to'ldirish zarur</p>
 
             <div className="space-y-3 max-h-72 overflow-y-auto pr-1">
               {lowStockItems.length === 0 ? (
                 <div className="text-center py-6 text-[#94A3B8] text-xs">
-                  All storage bins fully stocked!
+                  Barcha ombor javonlari to'la!
                 </div>
               ) : (
                 lowStockItems.map(p => (
@@ -246,10 +252,10 @@ export default function DashboardView({
                     </div>
                     <div className="text-right">
                       <span className="font-mono font-bold text-xs text-[#EF4444] block">
-                        {p.quantity} left
+                        {p.quantity} dona qoldi
                       </span>
                       <span className="text-[9px] font-mono font-semibold uppercase text-[#EF4444] tracking-wider block bg-red-100 rounded-sm px-1 mt-0.5">
-                        CRITICAL
+                        XAVF
                       </span>
                     </div>
                   </div>
@@ -262,7 +268,7 @@ export default function DashboardView({
             onClick={() => onNavigate("wms")}
             className="w-full mt-4 bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-2 rounded-lg text-xs font-semibold shadow-sm transition-all text-center block"
           >
-            Launch Stock Adjustment
+            Zaxiralarni to'ldirish (WMS)
           </button>
         </div>
       </div>

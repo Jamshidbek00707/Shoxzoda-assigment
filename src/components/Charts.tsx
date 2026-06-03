@@ -41,8 +41,8 @@ export function MonthlySalesChart({ data }: { data: { month: string; sales: numb
     <div className="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Wholesale Monthly Volumes</h3>
-          <p className="text-sm font-sans font-semibold text-[#0F172A]">Sales Order Run-Rate</p>
+          <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Oylik Sotuv Hajmlari</h3>
+          <p className="text-sm font-sans font-semibold text-[#0F172A]">Sotuv buyurtmalari oqimi</p>
         </div>
         {hoveredIndex !== null && (
           <div className="text-right">
@@ -146,17 +146,17 @@ export function DoubleLedgerChart({
     <div className="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Wholesale Double Ledger</h3>
-          <p className="text-sm font-sans font-semibold text-[#0F172A]">Income vs. Operating Expenditure</p>
+          <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Moliyaviy Balans Hisoboti</h3>
+          <p className="text-sm font-sans font-semibold text-[#0F172A]">Kirimlar va Operatsion xarajatlar tahlili</p>
         </div>
         <div className="flex items-center gap-4 text-xs font-medium">
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 bg-[#10B981] rounded-sm"></span>
-            <span>Ledger Receipts</span>
+            <span>Kirim qilingan tushumlar</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-3 bg-[#EF4444] rounded-sm"></span>
-            <span>Operating Expenditures</span>
+            <span>Ishlab chiqarish xarajatlari</span>
           </div>
         </div>
       </div>
@@ -275,8 +275,8 @@ export function CategoryDonutChart({ data }: { data: { name: string; value: numb
   return (
     <div className="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm h-full flex flex-col justify-between">
       <div>
-        <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Warehouse Composition</h3>
-        <p className="text-sm font-sans font-semibold text-[#0F172A] mb-4">Stock Breakdown by Group</p>
+        <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Mahsulot guruhlari</h3>
+        <p className="text-sm font-sans font-semibold text-[#0F172A] mb-4">Kategoriyalar bo'yicha ombor balansi</p>
       </div>
 
       <div className="flex flex-col sm:flex-row items-center gap-6 justify-center">
@@ -311,7 +311,7 @@ export function CategoryDonutChart({ data }: { data: { name: string; value: numb
             )}
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="font-mono text-xs font-semibold text-[#94A3B8]">STOCKS</span>
+            <span className="font-mono text-xs font-semibold text-[#94A3B8]">ZAXIRA</span>
             <span className="font-sans font-bold text-lg text-[#0F172A]">{total.toLocaleString()}</span>
           </div>
         </div>
@@ -324,7 +324,7 @@ export function CategoryDonutChart({ data }: { data: { name: string; value: numb
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }}></span>
                 <span className="text-xs text-[#64748B] font-medium truncate max-w-28">{item.name}</span>
               </div>
-              <span className="font-mono text-xs font-bold text-[#0F172A]">{item.value} units</span>
+              <span className="font-mono text-xs font-bold text-[#0F172A]">{item.value} dona</span>
             </div>
           ))}
         </div>
@@ -340,8 +340,8 @@ export function ProgressBarAllocations({ data }: { data: { label: string; value:
   return (
     <div className="bg-white rounded-xl border border-[#E2E8F0] p-5 shadow-sm h-full flex flex-col justify-between">
       <div>
-        <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Supply Sourcing Rates</h3>
-        <p className="text-sm font-sans font-semibold text-[#0F172A] mb-4">Stock Allocation by Vendor</p>
+        <h3 className="text-xs font-mono font-bold tracking-wider text-[#94A3B8] uppercase">Xaridlar ulushi</h3>
+        <p className="text-sm font-sans font-semibold text-[#0F172A] mb-4">Ta'minotchilar kesimida taqsimot</p>
       </div>
 
       <div className="space-y-4">
@@ -352,7 +352,7 @@ export function ProgressBarAllocations({ data }: { data: { label: string; value:
               <div className="flex items-center justify-between text-xs">
                 <span className="font-sans font-medium text-[#0F172A]">{item.label}</span>
                 <span className="font-mono text-[#64748B] font-bold">
-                  {item.value} pcs ({Math.round(percentage)}%)
+                  {item.value} dona ({Math.round(percentage)}%)
                 </span>
               </div>
               <div className="w-full bg-[#F1F5F9] h-2 rounded-full overflow-hidden">
