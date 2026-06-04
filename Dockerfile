@@ -13,7 +13,7 @@ RUN npm ci
 COPY . .
 
 # Run production build (Vite client-side assets + esbuild server transpilation)
-RUN npm run build
+RUN NODE_OPTIONS="--max-old-space-size=512" npm run build
 
 # Runtime container state
 FROM node:20-slim AS runner
@@ -24,9 +24,11 @@ WORKDIR /usr/src/app
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Copy necessary files from the builder stage
-COPY --from=builder /usr/src/app/package*.json ./
-COPY --from=builder /usr/src/app/node_modules ./node_modules
+# Copy necessary package configuration and install production dependencies
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Copy build outputs from builder
 COPY --from=builder /usr/src/app/dist ./dist
 COPY --from=builder /usr/src/app/assets ./assets
 

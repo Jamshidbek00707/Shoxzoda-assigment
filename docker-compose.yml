@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   # Full-stack FashionHub Node.js Application
   app:
